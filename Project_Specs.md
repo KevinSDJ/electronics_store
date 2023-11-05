@@ -14,6 +14,8 @@
     - up , delete , edit and view.
 5. [ ] Each employee can make some operations according to role.
 
+- User/Frontend
+  - Pending...
 
 
 
