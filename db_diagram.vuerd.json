@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -75.50000000000006,
-    "scrollLeft": -472,
+    "scrollTop": -117.50000000000006,
+    "scrollLeft": -254,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -210,9 +210,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 837,
-          "top": 34.8889,
-          "zIndex": 401,
+          "left": 862.5557,
+          "top": 43.7777,
+          "zIndex": 6,
           "widthName": 60,
           "widthComment": 60,
           "color": "#23810D"
@@ -275,7 +275,7 @@
           "active": false,
           "left": 237.1108,
           "top": 35.9997,
-          "zIndex": 382,
+          "zIndex": 1,
           "widthName": 64.8671875,
           "widthComment": 120
         },
@@ -337,7 +337,7 @@
           "active": false,
           "left": 234.6664,
           "top": 167.7779,
-          "zIndex": 383,
+          "zIndex": 2,
           "widthName": 105.30810546875,
           "widthComment": 60
         },
@@ -422,7 +422,7 @@
           "active": false,
           "left": 233.6669,
           "top": 326.5556,
-          "zIndex": 391,
+          "zIndex": 3,
           "widthName": 98.103515625,
           "widthComment": 60
         },
@@ -455,8 +455,8 @@
           "columnIds": [
             "c7d876a5-7e0e-4c8d-a758-19e84ccfc56e"
           ],
-          "x": 837,
-          "y": 141.13889999999998,
+          "x": 862.5557,
+          "y": 150.02769999999998,
           "direction": "left"
         },
         "constraintName": "fk_categories_to_products",
@@ -481,8 +481,8 @@
           "columnIds": [
             "cfe7bb2c-cf6d-4022-bed7-e045b2f4f2aa"
           ],
-          "x": 837,
-          "y": 70.30556666666666,
+          "x": 862.5557,
+          "y": 79.19436666666667,
           "direction": "left"
         },
         "constraintName": "fk_fabricants_marks_to_products",
@@ -498,8 +498,8 @@
           "columnIds": [
             "9b47e9eb-0477-4175-9ddc-118d53dcce09"
           ],
-          "x": 837,
-          "y": 211.9722333333333,
+          "x": 862.5557,
+          "y": 220.8610333333333,
           "direction": "left"
         },
         "end": {

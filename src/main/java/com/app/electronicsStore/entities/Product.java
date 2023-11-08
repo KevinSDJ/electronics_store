@@ -2,25 +2,22 @@ package com.app.electronicsStore.entities;
 
 import java.util.UUID;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
+@Table("products")
 public class Product {
 
     @Id
-    private UUID id;
+    private UUID code;
     private String title;
     private float price;
-    public Product(UUID id, String title, float price) {
-        this.id = id;
-        this.title = title;
-        this.price = price;
-    }
     public Product() {
     }
-    public UUID getId() {
-        return id;
+    public UUID getCode() {
+        return code;
     }
-    public void setId(UUID id) {
-        this.id = id;
+    public void setCode(UUID code) {
+        this.code = code;
     }
     public String getTitle() {
         return title;
@@ -36,6 +33,6 @@ public class Product {
     }
     @Override
     public String toString() {
-        return "Product [id=" + id + ", title=" + title + ", price=" + price + "]";
+        return "Product [code=" + code + ", title=" + title + ", price=" + price + "]";
     }
 }
