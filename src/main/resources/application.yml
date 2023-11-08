@@ -5,10 +5,9 @@ spring:
     reactive:
       max-chunk-size: 8192
   r2dbc:
-       url: r2dbc:pool:postgresql://localhost:5432/spring
-       username: spring
-       password: 1234
-       
+    url: r2dbc:pool:postgresql://localhost:5432/spring
+    username: spring
+    password: 1234
   data:
     r2dbc:
       repositories:
