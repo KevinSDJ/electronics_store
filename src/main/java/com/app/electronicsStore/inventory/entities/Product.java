@@ -1,4 +1,4 @@
-package com.app.electronicsStore.entities;
+package com.app.electronicsStore.inventory.entities;
 
 import java.util.UUID;
 import org.springframework.data.annotation.Id;

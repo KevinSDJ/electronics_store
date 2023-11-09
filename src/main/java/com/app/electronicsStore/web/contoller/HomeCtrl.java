@@ -1,4 +1,4 @@
-package com.app.electronicsStore.controller;
+package com.app.electronicsStore.web.contoller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
