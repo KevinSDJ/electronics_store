@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -303.16666666666674,
-    "scrollLeft": -290.66666666666663,
+    "scrollTop": -291.16666666666674,
+    "scrollLeft": -385.66666666666663,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -19,7 +19,7 @@
     },
     "database": "MySQL",
     "databaseName": "ElectronicsStore",
-    "canvasType": "ERD",
+    "canvasType": "@vuerd/builtin-sql-ddl",
     "language": "GraphQL",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -48,7 +48,7 @@
         "columns": [
           {
             "name": "code",
-            "comment": "unique code to indetity",
+            "comment": "",
             "dataType": "VARCHAR",
             "default": "gen_random_uuid()",
             "option": {
@@ -63,7 +63,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 60,
-              "widthComment": 120,
+              "widthComment": 60,
               "widthDataType": 64.6005859375,
               "widthDefault": 115.46435546875
             },
@@ -118,7 +118,7 @@
           {
             "name": "fabricant",
             "comment": "",
-            "dataType": "BIGINT",
+            "dataType": "INT",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -166,7 +166,7 @@
           "active": false,
           "left": 811.4445,
           "top": 33.7778,
-          "zIndex": 6,
+          "zIndex": 11,
           "widthName": 60,
           "widthComment": 60,
           "color": "#23810D"
@@ -181,7 +181,7 @@
           {
             "name": "id",
             "comment": "",
-            "dataType": "BIGINT",
+            "dataType": "INT",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -229,7 +229,7 @@
           "active": false,
           "left": 690.4447,
           "top": 535.9986,
-          "zIndex": 8,
+          "zIndex": 20,
           "widthName": 60,
           "widthComment": 60
         },
@@ -243,7 +243,7 @@
           {
             "name": "id",
             "comment": "",
-            "dataType": "BIGINT",
+            "dataType": "INT",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -291,7 +291,7 @@
           "active": false,
           "left": 235.7774,
           "top": 23.3334,
-          "zIndex": 1,
+          "zIndex": 13,
           "widthName": 60,
           "widthComment": 60
         },
@@ -305,7 +305,7 @@
           {
             "name": "id",
             "comment": "",
-            "dataType": "BIGINT",
+            "dataType": "INT",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -399,7 +399,7 @@
           "active": false,
           "left": 234.778,
           "top": 145.4448,
-          "zIndex": 2,
+          "zIndex": 18,
           "widthName": 108.9326171875,
           "widthComment": 60
         },
@@ -413,7 +413,7 @@
           {
             "name": "category_id",
             "comment": "",
-            "dataType": "BIGINT",
+            "dataType": "INT",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -671,7 +671,7 @@
           "columnIds": [
             "9b47e9eb-0477-4175-9ddc-118d53dcce09"
           ],
-          "x": 1044.976970703125,
+          "x": 1014.976970703125,
           "y": 205.2778,
           "direction": "bottom"
         },

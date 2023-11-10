@@ -1,1 +1,0 @@
-INSERT INTO products (title,price) values ('sadsadasdsad',200.49);

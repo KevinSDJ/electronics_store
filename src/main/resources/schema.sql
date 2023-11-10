@@ -1,16 +1,53 @@
-DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS Product_category;
+DROP TABLE IF EXISTS Product_availivility;
+DROP TABLE IF EXISTS Product_detail CASCADE;
+DROP TABLE IF EXISTS Category;
+DROP TABLE IF EXISTS Fabricant CASCADE;
+DROP TABLE IF EXISTS Product ;
 
-DROP TABLE IF EXISTS fabricant;
-
-CREATE TABLE IF NOT EXISTS fabricant(
-    id int GENERATED ALWAYS AS indentity NOT NULL UNIQUE, mark_name varchar(60) NOT NULL UNIQUE
+CREATE TABLE Category
+(
+  id SERIAL PRIMARY KEY UNIQUE,
+  name VARCHAR(26) NOT NULL UNIQUE
 );
 
-CREATE TABLE IF NOT EXISTS products(
-    code uuid PRIMARY KEY NOT NULL UNIQUE DEFAULT gen_random_uuid(),
-    title varchar(100) NOT NULL,
-    description text NULL,
-    fabricant_id bigint NULL,
-    model varchar(46) NULL,
-    FOREIGN KEY (fabricant_id) REFERENCES fabricant(id)
+CREATE TABLE Fabricant
+(
+  id SERIAL PRIMARY KEY UNIQUE,
+  company_name VARCHAR(36) NOT NULL UNIQUE,
+  logo BYTEA NULL
+);
+CREATE TABLE Product_detail
+(
+  id SERIAL PRIMARY KEY UNIQUE,
+  model VARCHAR(46) NULL,
+  description VARCHAR(440) NULL,
+  technical_data TEXT NULL
+);
+
+CREATE TABLE Product
+(
+  code UUID PRIMARY KEY DEFAULT gen_random_uuid() UNIQUE,
+  title VARCHAR(46) NOT NULL,
+  details INTEGER NOT NULL,
+  fabricant INTEGER NULL,
+  price FLOAT  NOT NULL DEFAULT 0.0,
+  FOREIGN KEY (details) REFERENCES Product_detail(id),
+  FOREIGN KEY (fabricant) REFERENCES Fabricant(id)
+);
+CREATE TABLE Product_availivility
+(
+  id SERIAL PRIMARY KEY,
+  product UUID NULL,
+  quantity BIGINT NULL DEFAULT 0,
+  quantity_sale BIGINT NULL DEFAULT 0,
+  FOREIGN KEY (product) REFERENCES Product(code)
+);
+
+CREATE TABLE Product_category
+(
+  category_id INTEGER NOT NULL,
+  product_id  UUID NOT NULL,
+  FOREIGN KEY (category_id) REFERENCES Category(id),
+  FOREIGN KEY (product_id) REFERENCES Product(code)
 );
