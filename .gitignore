@@ -4,7 +4,6 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 env.properties
-db_diagram.vuerd.json
 Project_Specs.md
 
 ### STS ###
