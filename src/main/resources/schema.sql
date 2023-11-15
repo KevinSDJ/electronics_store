@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS Product_category;
 DROP TABLE IF EXISTS Product_availivility;
 DROP TABLE IF EXISTS Product_detail CASCADE;
 DROP TABLE IF EXISTS Category;
-DROP TABLE IF EXISTS Fabricant CASCADE;
+DROP TABLE IF EXISTS Fabricants CASCADE;
 DROP TABLE IF EXISTS Product ;
 
 CREATE TABLE Category
@@ -11,9 +11,9 @@ CREATE TABLE Category
   name VARCHAR(26) NOT NULL UNIQUE
 );
 
-CREATE TABLE Fabricant
+CREATE TABLE Fabricants
 (
-  id SERIAL PRIMARY KEY UNIQUE,
+  id SERIAL PRIMARY KEY UNIQUE NOT NULL,
   company_name VARCHAR(36) NOT NULL UNIQUE,
   logo BYTEA NULL
 );
@@ -33,7 +33,7 @@ CREATE TABLE Product
   fabricant INTEGER NULL,
   price FLOAT  NOT NULL DEFAULT 0.0,
   FOREIGN KEY (details) REFERENCES Product_detail(id),
-  FOREIGN KEY (fabricant) REFERENCES Fabricant(id)
+  FOREIGN KEY (fabricant) REFERENCES Fabricants(id)
 );
 CREATE TABLE Product_availivility
 (
