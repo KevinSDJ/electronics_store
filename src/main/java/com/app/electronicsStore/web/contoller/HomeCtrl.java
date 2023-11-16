@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import reactor.core.publisher.Mono;
 
 @Controller
-@RequestMapping("/app/")
+@RequestMapping("/")
 public class HomeCtrl {
 
     @GetMapping
     Mono<String> getHome(final Model model){
         
-        return  Mono.just("index");
+        return  Mono.just("home");
     }
     
 }

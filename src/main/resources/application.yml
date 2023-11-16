@@ -1,6 +1,6 @@
 spring:
   thymeleaf:
-    prefix: classpath:/template/
+    prefix: classpath:/views/
     cache: true
     reactive:
       max-chunk-size: 8192

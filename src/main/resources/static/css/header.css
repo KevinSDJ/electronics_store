@@ -1,0 +1,7 @@
+
+header{
+    background-color: cadetblue;
+    color: whitesmoke;
+    max-height: 80px;
+    grid-area: header;
+}
