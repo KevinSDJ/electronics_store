@@ -3,7 +3,7 @@ package com.app.electronicsStore.inventory.entities;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table("ProductDetails")
+@Table("Products_detail")
 public class ProductDetail{
 
 

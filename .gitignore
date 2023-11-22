@@ -5,7 +5,7 @@ target/
 !**/src/test/**/target/
 env.properties
 Project_Specs.md
-
+application-dev.yml
 ### STS ###
 .apt_generated
 .classpath

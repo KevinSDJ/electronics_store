@@ -29,7 +29,7 @@ CREATE TABLE Products
 (
   code UUID PRIMARY KEY DEFAULT gen_random_uuid() UNIQUE,
   title VARCHAR(46) NOT NULL,
-  details INTEGER NOT NULL,
+  details INTEGER NULL,
   fabricant INTEGER NULL,
   price FLOAT  NOT NULL DEFAULT 0.0,
   FOREIGN KEY (details) REFERENCES Products_detail(id),

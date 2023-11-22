@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import com.app.electronicsStore.inventory.entities.Fabricant;
 import com.app.electronicsStore.inventory.entities.Product;
 import com.app.electronicsStore.inventory.entities.ProductDetail;
@@ -29,7 +28,7 @@ public class InventoryTest {
         product.setDetails(new ProductDetail("tuf 15", null, null));
         product.setPrice(340000);
         StepVerifier.create(productRepo.save(product))
-        .consumeErrorWith(e-> e.printStackTrace())
+        .expectComplete()
         .verify();
     }
     
