@@ -2,7 +2,6 @@ package com.app.electronicsStore.inventory.entities;
 
 import java.util.UUID;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Table("Products")
@@ -11,9 +10,7 @@ public class Product {
     @Id
     private UUID code;
     private String title;
-    @Transient
     private ProductDetail details;
-    @Transient
     private Fabricant fabricant;
     private float price;
     public Product(String title, ProductDetail details, Fabricant fabricant, float price) {

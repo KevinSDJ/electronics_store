@@ -28,6 +28,7 @@ public class InventoryTest {
         product.setDetails(new ProductDetail("tuf 15", null, null));
         product.setPrice(340000);
         StepVerifier.create(productRepo.save(product))
+        .expectNextMatches(e-> e.getClass()== Product.class)
         .expectComplete()
         .verify();
     }
