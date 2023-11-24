@@ -24,11 +24,20 @@ public class ProductsService implements InventoryCaseUse<Product,UUID>{
     public Mono<Product> persistProduct(Product t) {
         
         return detailsRepo.save(t.getDetails())
-            .onErrorContinue((Throwable error,Object o)->{
-                error.printStackTrace();
-            })
-            .flatMap(e-> updateDetails(t,e))
-            .flatMap(productRepo::save);
+        .doOnSuccess(e-> Mono.just(e))
+        .flatMap(f-> updateDetails(t,f))
+        .flatMap(e-> productRepo.save(e).log())
+        .flatMap(e->{
+                try {
+                    if(e==null){
+                        throw new Exception("Error save product");
+                    }
+                    return Mono.just(e);
+                } catch (Exception e1) {
+                    return Mono.empty();
+                }
+            
+        });
         
     }
 

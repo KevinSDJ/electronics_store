@@ -1,15 +1,15 @@
 package com.app.electronicsStore.invetorytest;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import com.app.electronicsStore.inventory.entities.Fabricant;
 import com.app.electronicsStore.inventory.entities.Product;
 import com.app.electronicsStore.inventory.entities.ProductDetail;
-import com.app.electronicsStore.inventory.repository.ProductRepo;
+import com.app.electronicsStore.inventory.service.ProductsService;
 import reactor.test.StepVerifier;
 
 @SpringBootTest
@@ -17,20 +17,26 @@ import reactor.test.StepVerifier;
 public class InventoryTest {
 
     @Autowired
-    ProductRepo productRepo;
+    ProductsService productsService;
+
 
     @Test
     @Order(1)
-    void testSave(){
+    @DisplayName("Test save base product")
+    void testSave1(){
         Product product = new Product();
         product.setTitle("computadora");
-        product.setFabricant(new Fabricant("asus", null));
         product.setDetails(new ProductDetail("tuf 15", null, null));
         product.setPrice(340000);
-        StepVerifier.create(productRepo.save(product))
-        .expectNextMatches(e-> e.getClass()== Product.class)
+        StepVerifier.create(productsService.persistProduct(product).log())
         .expectComplete()
         .verify();
+    }
+    @Test
+    @Order(2)
+    @DisplayName("Test reject duplicate")
+    void testSave2(){
+
     }
     
 }

@@ -1,13 +1,13 @@
-version: '3.9'
+version: "3.9"
 
 services:
   db: 
     image: postgres:16.0-alpine3.18 
     ports:
-      - "5432:5432"
+      - 5432:5432
     expose:
       - 5432
     environment:
-      - POSTGRES_USER=spring
-      - POSTGRES_DB=spring
-      - POSTGRES_PASSWORD=1234
+      POSTGRES_USER: spring
+      POSTGRES_DB: spring
+      POSTGRES_PASSWORD: 1234
