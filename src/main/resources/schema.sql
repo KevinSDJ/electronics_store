@@ -22,26 +22,26 @@ CREATE TABLE Products_detail
   id SERIAL PRIMARY KEY UNIQUE,
   model VARCHAR(46) NULL,
   description VARCHAR(440) NULL,
-  technical_data TEXT NULL
+  technical_data TEXT NOT NULL
 );
 
 CREATE TABLE Products
 (
   code UUID PRIMARY KEY DEFAULT gen_random_uuid() UNIQUE,
   title VARCHAR(46) NOT NULL,
-  details INTEGER NULL,
-  fabricant INTEGER NULL,
+  details_id INTEGER NULL,
+  fabricant_id INTEGER NULL,
   price FLOAT  NOT NULL DEFAULT 0.0,
-  FOREIGN KEY (details) REFERENCES Products_detail(id),
-  FOREIGN KEY (fabricant) REFERENCES Fabricants(id)
+  FOREIGN KEY (details_id) REFERENCES Products_detail(id),
+  FOREIGN KEY (fabricant_id) REFERENCES Fabricants(id)
 );
 CREATE TABLE Products_availivility
 (
   id SERIAL PRIMARY KEY,
-  product UUID NULL,
+  product_id UUID NULL,
   quantity BIGINT NULL DEFAULT 0,
   quantity_sale BIGINT NULL DEFAULT 0,
-  FOREIGN KEY (product) REFERENCES Products(code)
+  FOREIGN KEY (product_id) REFERENCES Products(code)
 );
 
 CREATE TABLE Products_category

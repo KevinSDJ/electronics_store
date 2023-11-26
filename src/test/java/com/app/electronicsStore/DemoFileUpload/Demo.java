@@ -19,14 +19,15 @@ public class Demo {
     @Autowired
     FabricantRepo repo;
     
-
     @Test
     @Order(1)
     void testLoad(){
         try {
             File file= new File("testing_resources/descarga.jpeg");
             FileInputStream input= new FileInputStream(file);
-            Fabricant f= new Fabricant("wolswagen", input.readAllBytes());
+            Fabricant f= new Fabricant();
+            f.setCompany_name("wolswagen");
+            f.setLogo(input.readAllBytes());
 
             StepVerifier.create(
                 repo.save(f)
