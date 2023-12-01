@@ -7,9 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import com.app.electronicsStore.inventory.dto.ProductFullDto;
-import com.app.electronicsStore.inventory.entities.Product;
 import com.app.electronicsStore.inventory.entities.ProductDetail;
 import com.app.electronicsStore.inventory.service.ProductsService;
 import reactor.test.StepVerifier;
