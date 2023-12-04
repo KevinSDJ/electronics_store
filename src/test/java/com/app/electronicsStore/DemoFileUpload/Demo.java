@@ -1,7 +1,7 @@
 package com.app.electronicsStore.DemoFileUpload;
 
 import java.io.File;
-import java.io.FileInputStream;
+import javax.imageio.stream.FileImageInputStream;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -24,10 +24,12 @@ public class Demo {
     void testLoad(){
         try {
             File file= new File("testing_resources/descarga.jpeg");
-            FileInputStream input= new FileInputStream(file);
+            FileImageInputStream input= new FileImageInputStream(file);
             Fabricant f= new Fabricant();
             f.setCompany_name("wolswagen");
-            f.setLogo(input.readAllBytes());
+            f.setLogo(null);
+        
+            
 
             StepVerifier.create(
                 repo.save(f)

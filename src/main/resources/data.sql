@@ -1,0 +1,1 @@
+insert into products(title,price) values('Harina',2000);

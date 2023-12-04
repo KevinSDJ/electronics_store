@@ -9,6 +9,7 @@ import com.app.electronicsStore.inventory.repository.ProductDetailsRepo;
 import com.app.electronicsStore.inventory.repository.ProductRepo;
 import com.app.electronicsStore.inventory.use_case.InventoryCaseUse;
 
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
@@ -36,7 +37,12 @@ public class ProductsService implements InventoryCaseUse<Product,UUID>{
 
     private Product updateDetails(Product p, ProductDetail pd){
         p.setDetails_id(pd.getId());
-        System.out.println(pd);
         return p;
+    }
+
+
+    @Override
+    public Flux<Product> getProducts() {
+        return productRepo.findAll();
     }
 }
