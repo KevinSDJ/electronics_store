@@ -4,9 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.app.electronicsStore.inventory.use_case.InventoryCaseUse;
-
+import com.app.electronicsStore.inventory.use_case.ProductUseCase;
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
 
@@ -15,7 +13,7 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class HomeCtrl {
 
-    private final InventoryCaseUse inventory;
+    private final ProductUseCase inventory;
 
     @GetMapping
     Mono<String> getHome(final Model model){

@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import com.app.electronicsStore.inventory.dto.ProductFullDto;
+import com.app.electronicsStore.inventory.dto.out.ProductFullDto;
 import com.app.electronicsStore.inventory.entities.ProductDetail;
-import com.app.electronicsStore.inventory.service.ProductsService;
+import com.app.electronicsStore.inventory.use_case.ProductUseCase;
 import reactor.test.StepVerifier;
 
 @SpringBootTest
@@ -17,7 +17,7 @@ import reactor.test.StepVerifier;
 public class InventoryTest {
 
     @Autowired
-    ProductsService productsService;
+    ProductUseCase productsService;
 
     @Test
     @Order(1)
@@ -30,12 +30,6 @@ public class InventoryTest {
         StepVerifier.create(productsService.persistProduct(product).log())
         .expectNextCount(1)
         .verifyComplete();
-    }
-    @Test
-    @Order(2)
-    @DisplayName("Test reject duplicate")
-    void testSave2(){
-
     }
     
 }

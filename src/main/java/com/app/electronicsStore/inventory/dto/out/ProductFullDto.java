@@ -1,4 +1,4 @@
-package com.app.electronicsStore.inventory.dto;
+package com.app.electronicsStore.inventory.dto.out;
 
 import java.util.UUID;
 import com.app.electronicsStore.inventory.entities.Fabricant;
